@@ -4,6 +4,7 @@ import "./App.css"
 
 function Counter() {
   const [value, setValue] = useState(0);
+  const [isVisible, setIsVisible] = useState(true)
 
   const handleIncrement = (incrementValue) => {
     const newValue = value + parseInt(incrementValue, 10);
@@ -24,14 +25,21 @@ function Counter() {
     const newValue = value / parseInt(divideValue, 10);
     setValue(newValue)
   }
-
+  
+  const handleVisibilityToggle = () => {
+    setIsVisible(!isVisible)
+  }
   return (
     <div>
-      <h1>Press A Button</h1>
+      <h1>Press Any Button</h1>
       <div className="board">
-        <div id="value" style={{ color: value < 0 ? "red" : "black" }}>
-          {value}
+        <div>
+        {isVisible &&
+        (<div id="value" style={{ color: value < 0 ? "red" : "black" }}>
+          Count is: {value}
         </div>
+        )}
+        <Button action={handleVisibilityToggle} symbol="Count Visible?"></Button></div>
         <div className="container">
           <Button
             action={() =>
@@ -82,6 +90,7 @@ function Counter() {
             }}
             symbol="C"
           ></Button>
+          
         </div>        
       </div>
     </div>

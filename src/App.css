@@ -1,10 +1,5 @@
-#root {
-  background-color: bisque;
-  color: #000;
-}
 .container {
-  display: flex;
-  
+  display: flex;   
 }
 
 .board {
@@ -14,12 +9,11 @@
 
 #value {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   font-size: 3rem;
 }
 Button {
   height: 4rem;
-  width: 4rem;
   margin: 0 1rem;
   font-size: 2rem;
   text-align: center;
