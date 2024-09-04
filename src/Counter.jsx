@@ -37,7 +37,7 @@ function Counter() {
     <div>
       <h1>Press Any Button</h1>
       <div className="board">
-        <div id="count">         
+        <div>         
         {isVisible && 
         (<div id="value" style={{ color: value < 0 ? "red" : "black" }}>
           Count is: {value}
