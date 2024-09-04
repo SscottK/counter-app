@@ -29,12 +29,17 @@ function Counter() {
   const handleVisibilityToggle = () => {
     setIsVisible(!isVisible)
   }
+
+  const handleMakeNegative = (valueToNegative) => {
+    setValue(value * -1)
+  }
   return (
     <div>
       <h1>Press Any Button</h1>
       <div className="board">
         <div>
-        {isVisible &&
+         
+        {isVisible && 
         (<div id="value" style={{ color: value < 0 ? "red" : "black" }}>
           Count is: {value}
         </div>
@@ -82,6 +87,12 @@ function Counter() {
                 handleDivide(parseInt(document.getElementById("number").value, 10))          
             }}
             symbol="/"
+          ></Button>
+          <Button 
+          action={() => {
+            handleMakeNegative(document.getElementById("number").value)
+          }}
+          symbol="Make Negative"
           ></Button>
           <Button
             action={() => {
