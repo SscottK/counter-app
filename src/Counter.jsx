@@ -91,7 +91,7 @@ function Counter() {
           action={() => {
             handleMakeNegative(document.getElementById("number").value)
           }}
-          symbol="Make Negative"
+          symbol="+/-"
           ></Button>
           <Button
             action={() => {
